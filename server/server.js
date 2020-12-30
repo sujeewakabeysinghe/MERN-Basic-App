@@ -1,19 +1,16 @@
 const Express=require("express");
 const Mongoose=require("mongoose");
 const BodyParser=require("body-parser");
-
 const App=Express();
-
-App.use(BodyParser.json());
-
+const port=3000;
 const Config=require("./config/database");
+const Item=require('./routes/item');
 
 Mongoose
     .connect(Config.database,{useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify:false})
     .then(()=>console.log('DB Connected!'))
     .catch(err=>console.log(err));
 
-const port=3000;
-
+App.use(BodyParser.json());
 App.listen(port,()=>console.log("Port Works!"));
-
+App.use("/item",Item);
