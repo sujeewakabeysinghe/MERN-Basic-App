@@ -8,15 +8,12 @@ App.use(BodyParser.json());
 
 const Config=require("./config/database");
 
-const connection=Mongoose.connect(Config.database,{useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify:false});
+Mongoose
+    .connect(Config.database,{useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify:false})
+    .then(()=>console.log('DB Connected!'))
+    .catch(err=>console.log(err));
 
 const port=3000;
 
 App.listen(port,()=>console.log("Port Works!"));
 
-if(connection){
-    console.log("DB Works!");
-}
-else{
-    console.log("DB does not Work!");
-}
