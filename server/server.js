@@ -14,3 +14,5 @@ Mongoose
 App.use(BodyParser.json());
 App.listen(port,()=>console.log("Port Works!"));
 App.use("/item",Item);
+
+App.get("/",(req,res)=>res.send("MERN App!"));
