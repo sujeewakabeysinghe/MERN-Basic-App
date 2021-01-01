@@ -2,7 +2,7 @@ const Express=require("express");
 const Mongoose=require("mongoose");
 const BodyParser=require("body-parser");
 const App=Express();
-const port=3000;
+const port=3001;
 const Config=require("./config/database");
 const Item=require('./routes/item');
 
