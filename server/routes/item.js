@@ -19,4 +19,8 @@ Router.post("/add",(req,res)=>{
     });
 });
 
+Router.get("/test",(req,res)=>{
+    res.send("App Items!")
+})
+
 module.exports=Router;
