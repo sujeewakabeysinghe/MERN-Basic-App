@@ -23,6 +23,7 @@ class navBar extends Component {
     }
 
     render() {
+        console.log(this.state.isOpen)
         return (
             <div>
                 <Navbar color="dark" dark expand="sm" className="mb-5">
@@ -31,6 +32,15 @@ class navBar extends Component {
                         <NavbarToggler onClick={this.toggle}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <NavLink href="https://github.com/sujeewakabeysinghe" target="_blank">GitHub</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="https://github.com/sujeewakabeysinghe" target="_blank">GitHub</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="https://github.com/sujeewakabeysinghe" target="_blank">GitHub</NavLink>
+                                </NavItem>
                                 <NavItem>
                                     <NavLink href="https://github.com/sujeewakabeysinghe" target="_blank">GitHub</NavLink>
                                 </NavItem>
