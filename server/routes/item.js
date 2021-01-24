@@ -1,15 +1,13 @@
 const Express=require("express");
-const Contact=require("../models/items");
+const Item=require("../models/items");
 const Router=Express.Router();
 
 
 Router.post("/add",(req,res)=>{
-    const NewContact=new Contact({
-        userId:req.body.userId,
-        fullName:req.body.fullName,
-        contactNo:req.body.contactNo
+    const newItem=new Item({
+        name:req.body.name
     });
-    Contact.createcontact(NewContact,(err,user)=>{
+    Item.createItem(newItem,(err)=>{
         if(err){
             res.json({state:false,msg:"Failed To Save!"});
         }

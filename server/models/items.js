@@ -7,4 +7,8 @@ const Item=new Schema({
     date:{type:Date,default:Date.now},
 });
 
-const Items=module.exports=Mongoose.model("item",Item);
+module.exports=Mongoose.model("item",Item);
+
+module.exports.createItem=function(item,callback){
+    item.save(callback);
+};
