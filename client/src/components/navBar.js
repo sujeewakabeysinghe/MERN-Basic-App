@@ -12,7 +12,7 @@ import {
 
 class navBar extends Component {
 
-    state={
+    state = {
         isOpen:false
     }
 
@@ -23,7 +23,6 @@ class navBar extends Component {
     }
 
     render() {
-        console.log(this.state.isOpen)
         return (
             <div>
                 <Navbar color="dark" dark expand="sm" className="mb-5">
