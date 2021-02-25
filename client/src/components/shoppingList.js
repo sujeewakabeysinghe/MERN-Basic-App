@@ -15,10 +15,12 @@ class shoppingList extends Component {
     }
 
     addItem=()=>{
-        const name=prompt('Hi!')
-        this.setState({
-            items : [...this.state.items, {id : uuidMy(), name : name}]
-        })
+        const name=prompt('Enter Item :')
+        if(name){
+            this.setState({
+                items : [...this.state.items, {id : uuidMy(), name : name}]
+            })
+        }
     }
 
     render() {
