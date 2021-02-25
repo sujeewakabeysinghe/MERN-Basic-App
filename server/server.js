@@ -12,7 +12,7 @@ Mongoose
     .catch(err=>console.log(err));
 
 App.use(BodyParser.json());
-App.listen(port,()=>console.log("Port Works!"));
+App.listen(port,()=>console.log(`Port ${port} Works!`));
 App.use("/item",Item);
 
 App.get("/",(req,res)=>res.send("MERN App!"));
