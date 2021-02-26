@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-export class itemModel extends Component {
+class itemModel extends Component {
     render() {
         return (
             <div>
@@ -12,7 +12,7 @@ export class itemModel extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    
+    item : state.item
 })
 
 const mapDispatchToProps = {
