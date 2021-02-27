@@ -34,7 +34,6 @@ class shoppingList extends Component {
         return (
             <div>
                 <Container>
-                    <Button color='dark' style={{marginBottom:'1rem'}} onClick={this.addItem}>Add Items</Button>
                     <ListGroup>
                         <TransitionGroup className="shopping-list">
                             {items.map(({id,name}) => (
@@ -68,4 +67,9 @@ const mapStateToProps = (state) => ({
     item : state.item
 })
 
-export default connect(mapStateToProps, { getItems, deleteItem })(shoppingList);
+const mapDispatchToProps = {
+    getItems,
+    deleteItem
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(shoppingList);
