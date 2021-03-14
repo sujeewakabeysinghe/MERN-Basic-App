@@ -12,7 +12,6 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
-import {v4 as uuid} from 'uuid'
 
 class itemModel extends Component {
 
@@ -35,7 +34,6 @@ class itemModel extends Component {
 
     onSubmit = () =>{
         const newItem={
-            id: uuid(),
             name: this.state.name}
         this.props.addItem(newItem)
         this.toggle()
