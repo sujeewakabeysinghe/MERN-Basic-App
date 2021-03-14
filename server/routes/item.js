@@ -1,4 +1,5 @@
 const Express=require("express");
+const items = require("../models/items");
 const Item=require("../models/items");
 const Router=Express.Router();
 
@@ -17,8 +18,10 @@ Router.post("/add",(req,res)=>{
     });
 });
 
-Router.get("/test",(req,res)=>{
-    res.send("App Items!")
+Router.get("/get",(req,res)=>{
+    Item.find()
+    .sort({date: -1})
+    .then(item => res.json(item))
 })
 
 module.exports=Router;
